@@ -1,0 +1,7 @@
+from .views import ping
+from django.urls import path
+
+urlpatterns = [
+    path('ping/', ping, name='ping'),
+    
+]

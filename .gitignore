@@ -1,0 +1,18 @@
+# Environnement virtuel
+venv/
+
+#Fichiers Python compiles
+*.pyc[cod]
+__pycache__/
+
+# Fichiers de base de donnees
+*.sqlite3
+
+# Config VS Code
+.vscode/
+
+# Fichiers Systemes
+.DS_Store
+
+# Secrers
+*.env
