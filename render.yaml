@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: api-ci-cd-demo
+    env: python
+    buildCommand: pip install -r requirements.txt && python manage.py collectstatic --noinput && python manage.py migrate
+    startCommand: gunicorn api_ci_cd_demo.wsgi:application
+    envVars:
+      - key : DEBUG
+        value: False
+      - key: SECRET_KEY
+        value: django-insecure-k14_zqr4b-#7_f94z1^_^vw5u1=yvd#b-+xr9j5q$h9_*5x!rh
+        sync: False
+    autoDeploy: true
