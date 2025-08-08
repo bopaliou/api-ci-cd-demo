@@ -26,12 +26,11 @@ SECRET_KEY = 'django-insecure-k14_zqr4b-#7_f94z1^_^vw5u1=yvd#b-+xr9j5q$h9_*5x!rh
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [
-    'localhost',
-    '127.0.0.1',
-    os.getenv('RENDER_EXTERNAL_HOSTNAME'),  # support dynamique Render
-    'api-ci-cd-demo.onrender.com',  # domaine de ton app Render
-]
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+
+RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
+if RENDER_EXTERNAL_HOSTNAME:
+    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
 
 
 # Application definition
